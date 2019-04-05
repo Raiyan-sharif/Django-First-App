@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cf4693b5-203c-421c-80a8-03fbba608373" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/DjangoApp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DjangoApp.iml" afterDir="false" />
-    </list>
+    <list default="true" id="cf4693b5-203c-421c-80a8-03fbba608373" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
