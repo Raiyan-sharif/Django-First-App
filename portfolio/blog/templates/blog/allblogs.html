@@ -1,13 +1,13 @@
+
 <!doctype html>
 <html lang="en">
-{% load staticfiles %}
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
-    <title>Django Potfolio</title>
+    <title>My Blog</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
 
@@ -47,7 +47,7 @@
                     <a class="nav-link" href="https://github.com/Raiyan-sharif">GitHub</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'allblogs' %}">Blog</a>
+                    <a class="nav-link active" href="{% url 'allblogs' %}">Blog</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="https://www.linkedin.com/in/raiyan-sharif-0a18a2b3/">LinkedIn</a>
@@ -59,35 +59,21 @@
 </header>
 
 <main role="main">
+    <div class="container">
+        <h1 class="text-center pt-3">Welcome to Raiyan's Blog</h1>
+        <br/>
+        <br/>
+        <h2>Latest Posts</h2>
+        <hr/>
+        {% for blog in blogs %}
+            <a href="{% url 'detail' blog.id %}"> <h3>{{blog.title}}</h3> </a>
+        <p>{{blog.pub_date_pretty}}</p>
+        <img src="{{ blog.image.url }}" height=200 width=200/>
+        <p>{{blog.summary}}</p>
+        <br/>
 
-    <section class="jumbotron text-center">
-        <div class="container">
-            <h1 class="jumbotron-heading">About Me</h1>
-            <p class="lead text-muted"> I am young, energetic and can learn quickly and solve problem efficiently. I have working experience in requirement analysis, designing Class diagram, write documentation and project management scheduling of a project. Besides this I worked as Android(XML, Java), IOS(swift, Objective C) and backend (Django). In research field I have done research on some of Artificial Intelligence fields- NLP, Machine Learning, Data Science, Image Processing, Image Recognition.</p>
-            <p>
-                <a href="mailto:conspicuous.ingenious@gmail.com" class="btn btn-primary my-2">Email Me</a>
+        {% endfor %}
 
-            </p>
-        </div>
-    </section>
-
-    <div class="album py-5 bg-light">
-        <div class="container">
-            <div class="row">
-                {% for job in jobs %}
-                <div class="col-md-4">
-                    <div class="card mb-4 shadow-sm">
-                        <img class="card-img-top" src="{{job.image.url}}" height=400 width=200/>
-                        <div class="card-body">
-                            <p class="card-text">{{job.summary}}</p>
-
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-
-            </div>
-        </div>
     </div>
 
 </main>
